@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/editBeerDetails.css">
+	<script src="js/beerArray.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		function PrintBrandName(){
+			console.log("PrintBrandName: "+Beers.brands[0].BrandName);
+			console.log("PrintBrandName: "+Beers.brands[1].BrandName);
+		}
+	</script>
+</head>
+<body>
+<div class="header">
+	<h1>Edit Beer Details</h1>
+</div>
+<div class="buffer">
+</div>
+<div class="Contentwrapper">
+	<div class="centeringWrapper">
+		<div class="firstColumn">
+			<div class="columnTitle">
+				<h1>Beer Brand</h1>
+			</div>
+			<div class="contentSearchBar">
+				<div class="BrandSearchTextBar">
+					<input type="text" name="BrandType" placeholder="Type here to find a specific beer brand.">
+					<div class="displayResults" id="BrandContent">
+					</div>
+				</div>
+			</div>
+			<div class="formBuffer">
+			</div>
+			<div class="itemSelectedForm">
+				<form>
+					<div class="formItem">
+						<input type="button" value="Edit Selected" onClick="PrintBrandName()">
+						<input type="button" value="Save Changes">
+						<input type="button" value="Add New Brand">
+					</div>
+					<div class="formItem">
+						<h3>Brand Name</h3>
+						<input type="text">
+					</div>
+					<div class="formItem">
+						<h3>Country</h3>
+						<input type="text">
+					</div>
+					<div class="formItem">
+						<h3>Company</h3>
+						<input type="text">
+					</div>
+					<div class="formItem">
+						<h3>Company Location</h3>
+						<input type="text">
+					</div>
+					<div class="formItem">
+						<h3>Company Website</h3>
+						<input type="text">
+					</div>
+					<div class="formItemCheckBx">
+						<input type="checkbox">
+						<h3>Hide All Prices For This Brand</h3>
+					</div>
+					<div class="formItemCheckBx">
+						<input type="checkbox">
+						<h3>Hide All Items For This Brand</h3>
+					</div>
+					<div class="formItemCheckBx">
+						<input type="checkbox">
+						<h3>Show All As Unavailable</h3>
+					</div>
+					<div class="formItem">
+						<input type="button" value="Delete Brand">
+						<p>WARNING: Deleting a brand also deletes all the corresponding varieties and availability data</p>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="secondColumn">
+			<div class="columnTitle">
+				<h1>Beer Variety</h1>
+			</div>
+			<div class="contentSearchBar">
+				<div class="FlavorSearchTextBar">
+					<input type="text" name="BrandType" placeholder="Type here to find a specific beer variety.">
+					<div class="displayResults" id="BeerContent">
+					</div>
+				</div>
+			</div>
+			<div class="formBuffer">
+			</div>
+			<div class="itemSelectedForm">
+				<form>
+					<div class="formItem">
+						<input type="button" value="Edit Selected">
+						<input type="button" value="Save Changes">
+						<input type="button" value="Add New Variety">
+					</div>
+					<div class="formItem">
+						<h3>Beer Name</h3>
+						<input type="text">
+					</div>
+					<div class="formItem">
+						<h3>ABV %</h3>
+						<input type="text">
+					</div>
+					<div class="formItem">
+						<h3>Type(Style)</h3>
+						<input type="text">
+					</div>
+					<div class="formItem">
+						<h3>Season</h3>
+						<input type="text">
+					</div>
+					<div class="formItemCheckBx">
+						<input type="checkbox">
+						<h3>Hide All Prices For This Variety</h3>
+					</div>
+					<div class="formItemCheckBx">
+						<input type="checkbox">
+						<h3>Hide All Items For This Variety</h3>
+					</div>
+					<div class="formItemCheckBx">
+						<input type="checkbox">
+						<h3>Show All As Unavailable</h3>
+					</div>
+					<div class="formItem">
+						<input type="button" value="Delete Variety">
+						<p>WARNING: Deleting a variety also deletes all the corresponding availability data</p>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="thirdColumn">
+			<div class="columnTitle">
+				<h1>Beer Availability</h1>
+			</div>
+			<div class="contentSearchBar">
+				<div class="AvailabilitySearchTextBar">
+					<input type="text" name="BrandType" placeholder="Type here to find the availablity of a beer variety.">
+					<div class="displayResults" id="AvailContent">
+					</div>
+				</div>
+			</div>
+			<div class="formBuffer">
+			</div>
+			<div class="itemSelectedForm">
+				<form>
+					<div class="formItem">
+						<input type="button" value="Edit Selected">
+						<input type="button" value="Save Changes">
+						<input type="button" value="Add New">
+					</div>
+					<div class="formItem">
+						<h3>Price</h3>
+						<input type="text">
+					</div>
+					<div class="formItem">
+						<h3>Container</h3>
+						<input type="text">
+					</div>
+					<div class="formItem">
+						<h3>Serving Container</h3>
+						<input type="text">
+					</div>
+					<div class="formItem">
+						<h3>Servings/Container</h3>
+						<input type="text">
+					</div>
+					<div class="formItemCheckBx">
+						<input type="checkbox">
+						<h3>Hide Price</h3>
+					</div>
+					<div class="formItemCheckBx">
+						<input type="checkbox">
+						<h3>Hide Item</h3>
+					</div>
+					<div class="formItemCheckBx">
+						<input type="checkbox">
+						<h3>Show As Unavailable</h3>
+					</div>
+					<div class="formItem">
+						<input type="button" value="Delete">
+						<p>WARNING: Deleting perminately removes the data for this item.</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+		window.onload = InsertData();
+		function InsertData(){
+			addBeerBrands();
+			addBeerVarieties();
+			addBeerAvaliabilities();
+		}
+		function addBeerBrands(){
+			for (i=0; i<Beers.brands.length;i++){
+				var brandContent = document.getElementById("BrandContent");
+				brandContent.appendChild(createBrandSearchItemDiv(Beers.brands[i].BrandName,i));
+			}
+		}
+		function createBrandSearchItemDiv(brandName,indexNum){
+			var newText = document.createTextNode(brandName);
+	  		var newGraf = document.createElement("h3");
+	  		newGraf.appendChild(newText);
+	  		var newDiv = document.createElement("div");
+	  		newDiv.setAttribute("class", "searchItem");
+	  		newDiv.setAttribute("indexNum", indexNum);
+	  		newDiv.setAttribute("onClick", "loadBeerVarities(this)");
+	  		newDiv.appendChild(newGraf);
+	  		return newDiv;
+		}
+		function loadBeerVarities (BrandDiv) {
+			var Beer = Beers.brands[BrandDiv.getAttribute("indexNum")].BeerNums.slice(0);
+			var beerContent = document.getElementById("BeerContent");
+			removeAllChildren(beerContent);
+			for (i=0; i<Beer.length; i++){
+				beerContent.appendChild(createBeerSearchItemDiv(Beers.varities[Beer[i]].BeerName,i));
+			}
+		}
+		function createBeerSearchItemDiv(beerName, indexNum){
+			var newText = document.createTextNode(beerName);
+	  		var newGraf = document.createElement("h3");
+	  		newGraf.appendChild(newText);
+	  		var newDiv = document.createElement("div");
+	  		newDiv.setAttribute("class", "searchItem");
+	  		newDiv.setAttribute("indexNum", indexNum);
+	  		newDiv.setAttribute("onClick", "loadAvailableVarities(this)");
+	  		newDiv.appendChild(newGraf);
+	  		return newDiv;
+		}
+		function loadAvailableVarities(BeerDiv){
+			var Avail = Beers.varities[BeerDiv.getAttribute("indexNum")].AvailableBeers.slice(0);
+			var beerContent = document.getElementById("AvailContent");
+			removeAllChildren(beerContent);
+			for (i=0; i<Avail.length; i++){
+				//beerContent.appendChild(createAvailSearchItemDiv(Beers.availability[Avail[i]].slice(0), i));
+				var AvailTextToDisplay = Beers.availability[Avail[i]].ServPerContainer+" "+ContainerOfBeer[Beers.availability[Avail[i]].Container].types+" "+ServingContainerOfBeer[Beers.availability[Avail[i]].ServingContainer].types+": $"+Beers.availability[Avail[i]].Price;
+				//console.log("hope it works: "+Beers.availability[Avail[i]].Price);
+				//console.log("HERE IT IS:: "+AvailTextToDisplay);
+				beerContent.appendChild(createAvailSearchItemDiv(AvailTextToDisplay, i));
+			}
+		}
+		function createAvailSearchItemDiv(availText,  indexNum){
+			var newText = document.createTextNode(availText);
+	  		var newGraf = document.createElement("h3");
+	  		newGraf.appendChild(newText);
+	  		var newDiv = document.createElement("div");
+	  		newDiv.setAttribute("class", "searchItem");
+	  		newDiv.setAttribute("indexNum", indexNum);
+	  		newDiv.appendChild(newGraf);
+	  		return newDiv;
+		}
+		function removeAllChildren(ParentElement){
+			while (ParentElement.firstChild){
+				ParentElement.removeChild(ParentElement.firstChild);
+			}
+		}
+		function addBeerVarieties(){
+
+		}
+		function addBeerAvaliabilities(){
+
+		}
+</script>
+</body>
+</html>

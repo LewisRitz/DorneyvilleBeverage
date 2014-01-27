@@ -1,0 +1,186 @@
+/*
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+
+/* Table of Contents
+==================================================
+
+    OLD STUFF:
+    #Base 1200 Grid
+    #Base 960 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing 
+
+    TOO BIG FOR MY COMPUTER:
+    #2560 grid
+    #1920 grid
+    #1680 grid
+
+    MY GRID:
+    #Base 1440 grid
+    #1200 grid
+    #1024 grid
+    #960 grid
+    #800 grid
+    #640 grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+
+    */
+
+
+/* #Base 1680 Grid
+================================================== */
+    
+    //.header { padding: 0px; }
+/* #Base 1440 Grid
+================================================== */
+    @media only screen and (min-width: 1440px) and (max-width: 1679px) {
+        .header .Container .second { width: 26%; }
+        .header .Container .third { width: 28%; }
+
+    }
+
+/* #Base 1200 Grid
+================================================== */
+
+    @media only screen and (min-width: 1200px) and (max-width: 1439px) {
+        .header .Container .first a { margin-left: 10px; }
+        .header .Container .third a, h3 { margin: 0px; margin-left: 5px !important; }
+        .header .Container .second { width: 34%; }
+        .header .Container .third { width: 28%; }
+        .header { padding-top: 20px; padding-bottom: 5px; }
+    }   
+/* #Base 1024 Grid
+================================================== */
+    @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+        .header .Container .first a { margin-left: 5px; }
+        .header .Container .third a, h3 { margin-left: 5px; }
+        .header .Container .second { width: 32% !important; }
+        .header .Container .third { width: 28%; }
+        .header { padding: 0px; padding-top: 10px; } 
+        .WelcomeMessage .logo { width: 42%; }   
+    }
+/* #Base 960 Grid
+================================================== */
+	
+	@media only screen and (min-width: 960px) and (max-width: 1199px) {
+        h3 { margin: 0px !important; }
+
+        .header { padding-bottom: 15px; padding-top: 20px; }
+        .header .Container .bufferLeft { width: 3%;}
+        .header .Container .first { width: 29%; }
+        .header .Container .first a { margin-left: 5px; }
+        .header .Container .second { width: 32%; }
+        .header .Container .third { width: 29%; }
+        .header .Container .third a, h3 { margin-left: 5px !important; }
+        .WelcomeMessage .logo { width: 42%; }   
+
+
+    }
+
+/* #Tablet (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        h3 { margin: 0px !important; }
+
+        .header { padding-bottom: 15px; padding-top: 20px; }
+        .header .Container .bufferLeft { width: 3%;}
+        .header .Container .first { width: 29%; }
+        .header .Container .first a { margin-left: 5px; }
+        .header .Container .second { width: 32%; }
+        .header .Container .second h1 { font-size: 26px; }
+        .header .Container .third { width: 29%; }
+        .header .Container .third a, h3 { margin-left: 5px !important; font-size: 16px !important; }
+        .WelcomeMessage .logo { width: 59% !important; }   
+
+    }
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+    /*
+    @media only screen and (min-width: 767px) and (max-width: 767px) {
+        .Process .Title .ProcessDesign img { width: 100px; height: 100px; }
+        .Process .Title .ProcessAssembly img { width: 100px; height: 100px; }
+        .Process .Title .ProcessShipping img { width: 100px; height: 100px; }
+        .Process .Title .ProcessFabrication img { width: 100px; height: 100px; }
+        .Process .Title .ProcessTesting img { width: 100px; height: 100px; }  
+        
+    }
+    */
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        h3 { margin: 0px !important; }
+
+        .header { padding-bottom: 15px; padding-top: 20px; }
+        .header .Container .bufferLeft { width: 3%;}
+        .header .Container .first { width: 29%; }
+        .header .Container .first a { margin-left: 5px; }
+        .header .Container .second { width: 32%; }
+        .header .Container .second h1 { font-size: 26px; }
+        .header .Container .third { width: 29%; }
+        .header .Container .third a, h3 { margin-left: 5px !important; font-size: 16px !important; }
+	    .WelcomeMessage .logo { width: 65% !important; }   
+
+    }
+
+
+    @media only screen and (max-width: 479px) {
+
+    }
+
+/* #Clearing
+================================================== */
+
+    /* Self Clearing Goodness */
+    .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+    /* You can also use a <br class="clear" /> to clear columns */
+    .clear {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
