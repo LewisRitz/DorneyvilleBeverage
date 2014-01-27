@@ -16,7 +16,9 @@ body { margin:0px; background-color: #E0E0E0; }
 		.Contentwrapper .contentSearchBar .displayResults { overflow-y: scroll; background-color: #D0D0D0; height: 137px; }
 		.Contentwrapper .contentSearchBar .searchItem { width: 97%; }
 		.Contentwrapper .contentSearchBar .searchItem h3 { margin: 0px; font-size: 20px; margin-left: 10px; }
-		.Contentwrapper .contentSearchBar .searchItem:hover { background-color: #FFF; }
+		//.Contentwrapper .contentSearchBar .searchItem { background-color: #FFF; }
+
+
 
 		.Contentwrapper .formBuffer { width: 100%; height: 25px; }
 

@@ -28,6 +28,7 @@ window.onload = InsertData();
 			for (i=0; i<Beer.length; i++){
 				beerContent.appendChild(createBeerSearchItemDiv(Beers.varities[Beer[i]].BeerName,i));
 			}
+			selectElement(BrandDiv);
 		}
 		function createBeerSearchItemDiv(beerName, indexNum){
 			var newText = document.createTextNode(beerName);
@@ -45,12 +46,10 @@ window.onload = InsertData();
 			var beerContent = document.getElementById("AvailContent");
 			removeAllChildren(beerContent);
 			for (i=0; i<Avail.length; i++){
-				//beerContent.appendChild(createAvailSearchItemDiv(Beers.availability[Avail[i]].slice(0), i));
 				var AvailTextToDisplay = Beers.availability[Avail[i]].ServPerContainer+" "+ContainerOfBeer[Beers.availability[Avail[i]].Container].types+" "+ServingContainerOfBeer[Beers.availability[Avail[i]].ServingContainer].types+": $"+Beers.availability[Avail[i]].Price;
-				//console.log("hope it works: "+Beers.availability[Avail[i]].Price);
-				//console.log("HERE IT IS:: "+AvailTextToDisplay);
 				beerContent.appendChild(createAvailSearchItemDiv(AvailTextToDisplay, i));
 			}
+			selectElement(BeerDiv);
 		}
 		function createAvailSearchItemDiv(availText,  indexNum){
 			var newText = document.createTextNode(availText);
@@ -59,8 +58,24 @@ window.onload = InsertData();
 	  		var newDiv = document.createElement("div");
 	  		newDiv.setAttribute("class", "searchItem");
 	  		newDiv.setAttribute("indexNum", indexNum);
+	  		newDiv.setAttribute("onClick", "selectElement(this)");
 	  		newDiv.appendChild(newGraf);
 	  		return newDiv;
+		}
+		function selectElement(Element){
+			changeAllPeerElementBackgroundsToClear(Element);
+			makeBackgroundWhite(Element);
+		}
+		function changeAllPeerElementBackgroundsToClear(Element){
+			var children = Element.parentNode.childNodes;
+			for (i=0;i<children.length;i++){
+				if(children[i].nodeName === "DIV"){
+					children[i].style.backgroundColor = "transparent";
+				}
+			}
+		}
+		function makeBackgroundWhite(Element){
+			Element.style.backgroundColor = "white";
 		}
 		function removeAllChildren(ParentElement){
 			while (ParentElement.firstChild){
