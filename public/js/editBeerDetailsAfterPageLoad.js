@@ -22,13 +22,19 @@ window.onload = InsertData();
 	  		return newDiv;
 		}
 		function loadBeerVarities (BrandDiv) {
-			var Beer = Beers.brands[BrandDiv.getAttribute("indexNum")].BeerNums.slice(0);
-			var beerContent = document.getElementById("BeerContent");
-			removeAllChildren(beerContent);
-			for (i=0; i<Beer.length; i++){
-				beerContent.appendChild(createBeerSearchItemDiv(Beers.varities[Beer[i]].BeerName,i));
+			if (Beers.brands[BrandDiv.getAttribute("indexNum")].BeerNums === undefined){}
+			else {
+				var Beer = Beers.brands[BrandDiv.getAttribute("indexNum")].BeerNums.slice(0);
+				var beerContent = document.getElementById("BeerContent");
+				removeAllChildren(beerContent);
+				for (i=0; i<Beer.length; i++){
+					if (Beers.varities[Beer[i]] === undefined){}
+					else{
+						beerContent.appendChild(createBeerSearchItemDiv(Beers.varities[Beer[i]].BeerName,i));
+					}
+				}
+				selectElement(BrandDiv);
 			}
-			selectElement(BrandDiv);
 		}
 		function createBeerSearchItemDiv(beerName, indexNum){
 			var newText = document.createTextNode(beerName);
